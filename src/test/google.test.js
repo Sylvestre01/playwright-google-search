@@ -1,4 +1,4 @@
-import test from "@playwright/test";
+import test, { expect } from "@playwright/test";
 const { Actions, GooglePage, URLs } = require("../utils/imports");
 
 let actions, pGoogle
@@ -13,22 +13,25 @@ test.describe("Google Search Tests", () => {
         })
     })
 
-    test("Verify google search for - MALTA", async() => {
+    test("Verify google search for - MALTA", async({page}) => {
         await pGoogle.enter_google_phrase("Malta");
         await pGoogle.click_search_button();
-        // await actions.verifyElementMatch(pGoogle.maltaText(), "Malta")
+        // await page.waitForTimeout(60000); //
+        // await expect(pGoogle.maltaText()).toHaveText("Malta")
     })
 
-    test("Verify google search for - VALLETA", async() => {
+    test("Verify google search for - VALLETA", async({page}) => {
         await pGoogle.enter_google_phrase("Valleta");
         await pGoogle.click_search_button();
-        // await actions.verifyElementMatch(pGoogle.valletaText(), "Valleta")
+        // await page.waitForTimeout(60000); //
+        // await expect(pGoogle.valletaText()).toHaveText("Valleta")
     })
 
-    test("Verify google search for - THE MULTIPLE", async() => {
+    test("Verify google search for - THE MULTIPLE", async({page}) => {
         await pGoogle.enter_google_phrase("The Multiple");
         await pGoogle.click_search_button();
-        // await actions.verifyElementMatch(pGoogle.multipleText(), "The Multiple")
+        // await page.waitForTimeout(60000); //
+        // await expect(pGoogle.multipleText()).toHaveText("The Multiple")
     })
 
      /**

@@ -25,15 +25,15 @@ export class GooglePage {
     }
 
     async maltaText(){
-        return await this.headingMalta.textContent();
+        return this.headingMalta;
     }
 
     async valletaText(){
-        return await this.headingValleta.textContent();
+        return this.headingValleta;
     }
 
     async multipleText(){
-        return await this.headingMultiple.textContent();
+        return this.headingMultiple;
     }
 
 
